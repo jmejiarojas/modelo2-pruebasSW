@@ -142,7 +142,7 @@ public class FechaTest {
 	@Test
 	public void obtenerResultadoEntrada_Mas_7__Menos_30_Dias(){
 		Fecha fecha = new Fecha();
-		String expectResult = "Ud. pagara 80 soles";
+		String expectResult = "Ud. pagara 40 soles";
 		String result = fecha.obtenerMontoEntradas("2017-02-01", "2017-02-08");
 		assertEquals(expectResult, result);
 	}
@@ -150,7 +150,7 @@ public class FechaTest {
 	@Test
 	public void obtenerResultadoEntrada_Mas_7__Menos_30_Dias_2(){
 		Fecha fecha = new Fecha();
-		String expectResult = "Ud. pagara 80 soles";
+		String expectResult = "Ud. pagara 40 soles";
 		String result = fecha.obtenerMontoEntradas("2017-02-01", "2017-02-11");
 		assertEquals(expectResult, result);
 	}
@@ -158,7 +158,7 @@ public class FechaTest {
 	@Test
 	public void obtenerResultadoEntrada_Mas_7__Menos_30_Dias_3(){
 		Fecha fecha = new Fecha();
-		String expectResult = "Ud. pagara 80 soles";
+		String expectResult = "Ud. pagara 40 soles";
 		String result = fecha.obtenerMontoEntradas("2017-02-01", "2017-02-16");
 		assertEquals(expectResult, result);
 	}
@@ -166,7 +166,7 @@ public class FechaTest {
 	@Test
 	public void obtenerResultadoEntrada_Mas_30_Dias(){
 		Fecha fecha = new Fecha();
-		String expectResult = "Ud. pagara 60 soles";
+		String expectResult = "Ud. pagara 20 soles";
 		String result = fecha.obtenerMontoEntradas("2017-02-01", "2017-03-16");
 		assertEquals(expectResult, result);
 	}
@@ -174,7 +174,7 @@ public class FechaTest {
 	@Test
 	public void obtenerResultadoEntrada_Mas_30_Dias_2(){
 		Fecha fecha = new Fecha();
-		String expectResult = "Ud. pagara 60 soles";
+		String expectResult = "Ud. pagara 20 soles";
 		String result = fecha.obtenerMontoEntradas("2017-10-01", "2017-10-31");
 		assertEquals(expectResult, result);
 	}

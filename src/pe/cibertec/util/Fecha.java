@@ -100,9 +100,9 @@ public class Fecha {
 			numDias = numeroDiasEntreFechas(fecha1, fecha2);
 			
 			if(numDias >= 30){
-				mensaje = "Ud. pagara 60 soles";
+				mensaje = "Ud. pagara 20 soles";
 			}else if(numDias < 30 && numDias >= 7){
-				mensaje = "Ud. pagara 80 soles";
+				mensaje = "Ud. pagara 40 soles";
 			}else if(numDias < 7 && numDias >0){ //6,5,4,3,2,1 [Requerimiento ambiguo]
 				mensaje = "Requerimiento ambiguo";
 			}else{ // 0
