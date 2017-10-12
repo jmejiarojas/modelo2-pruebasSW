@@ -59,4 +59,81 @@ public class Fecha {
 
 		return bandera;
 	}
+	
+	/*
+	 * El problema propuesto es:
+	 * 
+	 * -La entrada esta 100 soles.
+	 * 
+	 * -Si compro 30 dias antes a más dias una entrada, mi descuento es de 80%.
+	 * -Si compro 7 dias antes(entre 7 y 30), mi descuento es de 60%.
+	 * -Si lo compro el mismo dia, no obtengo ningun descuento.
+	 * 
+	 * */
+	
+	//Metodo clave
+	public int numeroDiasEntreFechas(String fecha1, String fecha2){
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		int dias = 0;
+		
+		try {
+			Date fechaInicial=dateFormat.parse(fecha1);
+			Date fechaFinal=dateFormat.parse(fecha2);
+			dias=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
+		} catch (Exception e) { //Nunca entra aca, pues en otro metodo se validara la existencia de una fecha
+			System.out.println(e);
+		}
+		return dias;	
+	}
+	
+	public String obtenerMontoEntradas(String fecha1, String fecha2){
+		
+		String mensaje = "";
+		int numDias = 0;
+		
+		if(!validarFecha(fecha1)){
+			mensaje = "Ingreso Incorrecto de Fechas";
+		}else if(!validarFecha(fecha2)){
+			mensaje = "Ingreso Incorrecto de Fechas";
+		}else{ //Las dos fechas son validas
+			numDias = numeroDiasEntreFechas(fecha1, fecha2);
+			
+			if(numDias >= 30){
+				mensaje = "Ud. pagara 60 soles";
+			}else if(numDias < 30 && numDias >= 7){
+				mensaje = "Ud. pagara 80 soles";
+			}else if(numDias < 7 && numDias >0){ //6,5,4,3,2,1 [Requerimiento ambiguo]
+				mensaje = "Requerimiento ambiguo";
+			}else{ // 0
+				mensaje = "Ud. pagara 100 soles";
+			}
+		}
+		return mensaje;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
